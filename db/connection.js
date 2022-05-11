@@ -13,4 +13,7 @@ const db = mysql.createConnection(
     console.log(`Connected to the Employee Database.`)
   );
 
+db.connect((err) => {
+  if (err) throw err
+})
   module.exports = db;

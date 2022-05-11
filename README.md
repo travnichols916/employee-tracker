@@ -1,5 +1,7 @@
 # employee-tracker
-
+## Description
+* MySql is a relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. To add, access, and process data stored in a computer database, you need a database management system such as MySQL Server.
+<a src="https://drive.google.com/file/d/1mKOa_WKWQRU-TK7yvdw7aNy14Q8V1ies/view" alt="Video of test"></a>
 
 <img src="https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge"/>
 
@@ -26,12 +28,15 @@
 
 
 ## Screenshots 
-* 
+* Use foreign key to pull data from a primary key from another table to make it unique.
+* Use of map to return title and id from the role table. 
+* Use function for viewing all departments and use of console data table package.
+
 
 ## Contributor
 
 * Travis Nichols
-
+* Wikipedia
 
 ## License
 

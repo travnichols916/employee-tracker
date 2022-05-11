@@ -12,8 +12,7 @@ CREATE TABLE roles (
     title VARCHAR(30) NOT NULL,
     salary DECIMAL,
     department_id INTEGER,
-    -- fk_roles is the name of the new foreign key which pulls from department_id to connect with the department table 
-    CONSTRAINT fk_roles FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
+    CONSTRAINT fk_roles FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE SET NULL
     
 );
 CREATE TABLE employees (

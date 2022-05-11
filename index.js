@@ -65,8 +65,7 @@ const start = () => {
     })
 };
 
-// call our function to begin
-start();
+
 
 //functions for viewing
 function viewAllDepartments() {
@@ -268,40 +267,6 @@ function updateEmployee() {
     })
 };
 
-//function viewing 
-function viewEmployeesByManager() {
-
-    db.query("SELECT * FROM managers", function (err, data) {
-
-        if (err) throw err;
-
-        // the map() function will generate a new array with each object
-        let managers = data.map(managers => {
-            return { name: `${managers.first_name} ${managers.last_name}, ${managers.title}`, value: managers.manager_id }
-        })
-        let nullValue = { name: 'Return to main menu.', value: 100 };
-        managers.push(nullValue);
-        inquirer.prompt([
-            {
-                type: "list",
-                name: "manager_choices",
-                message: "Select manager to view team.",
-                choices: managers
-            }]).then(answers => {
-                if (answers.manager_choices === 100) {
-                    start();
-                }
-                // where statemet to filter records
-                else{
-                    db.query(`SELECT employees.first_name, employees.last_name, roles.title FROM employees, roles WHERE employees.manager_id = ? AND employees.role_id = roles.id`, answers.manager_choices, function (err, res) {
-                        if (err) throw err;
-                        console.table(res);
-                        start();
-                    })
-                }
-            })
-    })
-}; 
 //function for viewing employees 
 function viewEmployeesByDept() {
 
@@ -524,3 +489,6 @@ function removeEmployee () {
         })
     })
 };
+
+// call our function to begin
+start()
